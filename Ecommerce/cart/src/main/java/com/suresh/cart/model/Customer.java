@@ -1,5 +1,7 @@
 package com.suresh.cart.model;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,15 +14,16 @@ import lombok.ToString;
 
 @Entity
 @Getter @Setter @ToString
-public class Cart {
+public class Customer {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "cart_id")
-	private int cartId;
 	@Column(name = "customer_id")
 	private int customerId;
-	@Column(name = "product_id")
-	private String productId;
-	@Column(name = "product_price")
-	private Long productPrice;
+	private String name;
+	private String email;
+	@Column(name = "mobile_number")
+	private String mobileNumber;
+	@Column(name = "create_dt")
+	private LocalDate createDt;
 }
